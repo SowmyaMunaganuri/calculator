@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import Result from './Result'
 import Expression from './Expression'
 
-const host = location.origin.replace(/^http/, 'ws');
+const URL = 'ws://localhost:3030'
 
 class Main extends Component {
   state = {
     messages: [],
   }
 
-  ws = new WebSocket(host)
+  ws = new WebSocket(URL)
 
   componentDidMount() {
     this.ws.onopen = () => {
